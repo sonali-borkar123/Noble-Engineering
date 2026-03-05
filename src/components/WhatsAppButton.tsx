@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
   const handleClick = () => {
-    window.location.href = "https://api.whatsapp.com/send?phone=91970578516&text=Hello%20Noble%20Engineering%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
+    window.location.href = "https://api.whatsapp.com/send?phone=919766314010&text=Hello%20Noble%20Engineering%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.";
   };
 
   return (
