@@ -16,6 +16,8 @@ import skidImg from "@/assets/skid_2.jpeg";
 import skidImg1 from "@/assets/skid_3.jpeg";
 import skidImg2 from "@/assets/skid_4.jpeg";
 import solar1 from "@/assets/solar_1.jpeg";
+import solar2 from "@/assets/solar_2.jpeg";
+import solar3 from "@/assets/solar_3.jpeg";
 
 const galleryItems: { id: number; title: string; image: StaticImageData }[] = [
   { id: 1, title: "Heavy Fabrication", image: fabricationImg },
@@ -25,8 +27,8 @@ const galleryItems: { id: number; title: string; image: StaticImageData }[] = [
   { id: 5, title: "Skid Frame Assembly", image: skidImg1 },
   { id: 6, title: "Skid Frame Assembly", image: skidImg2 },
   { id: 7, title: "Solar Structure", image: solar1 },
-  { id: 8, title: "Solar Structure", image: skidImg2 },
-  { id: 9, title: "Solar Structure", image: skidImg },
+  { id: 8, title: "Solar Structure", image: solar2 },
+  { id: 9, title: "Solar Structure", image: solar3 },
   { id: 10, title: "Material Handling Trolley", image: materialImg },
   { id: 11, title: "Material Handling Trolley", image: materialImg1 },
   { id: 12, title: "Material Handling Trolley", image: materialImg2 },
