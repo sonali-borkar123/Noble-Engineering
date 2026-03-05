@@ -19,20 +19,20 @@ import solar1 from "@/assets/solar_1.jpeg";
 import solar2 from "@/assets/solar_2.jpeg";
 import solar3 from "@/assets/solar_3.jpeg";
 
-const galleryItems: { id: number; title: string; image: StaticImageData }[] = [
-  { id: 1, title: "Heavy Fabrication", image: fabricationImg },
-  { id: 2, title: "Heavy Fabrication", image: fabricationImg1 },
-  { id: 3, title: "Heavy Fabrication", image: fabricationImg2 },
-  { id: 4, title: "Skid Frame Assembly", image: skidImg },
-  { id: 5, title: "Skid Frame Assembly", image: skidImg1 },
-  { id: 6, title: "Skid Frame Assembly", image: skidImg2 },
-  { id: 7, title: "Solar Structure", image: solar1 },
-  { id: 8, title: "Solar Structure", image: solar2 },
-  { id: 9, title: "Solar Structure", image: solar3 },
-  { id: 10, title: "Material Handling Trolley", image: materialImg },
-  { id: 11, title: "Material Handling Trolley", image: materialImg1 },
-  { id: 12, title: "Material Handling Trolley", image: materialImg2 },
-  { id: 13, title: "Material Handling Trolley", image: materialImg3 },
+const galleryItems: { id: number; title: string; alt: string; image: StaticImageData }[] = [
+  { id: 1, title: "Heavy Fabrication", alt: "Heavy fabrication assembly - industrial crane beam component", image: fabricationImg },
+  { id: 2, title: "Heavy Fabrication", alt: "Heavy fabrication - pressure tank and structural welding", image: fabricationImg1 },
+  { id: 3, title: "Heavy Fabrication", alt: "Heavy fabrication - concrete bucket and construction cage", image: fabricationImg2 },
+  { id: 4, title: "Skid Frame Assembly", alt: "Skid frame assembly - industrial base frame fabrication", image: skidImg },
+  { id: 5, title: "Skid Frame Assembly", alt: "Skid frame - pipe support and platform structure", image: skidImg1 },
+  { id: 6, title: "Skid Frame Assembly", alt: "Skid frame assembly - structural railing and ladder", image: skidImg2 },
+  { id: 7, title: "Solar Structure", alt: "Solar panel mounting structure fabrication", image: solar1 },
+  { id: 8, title: "Solar Structure", alt: "Solar structure - ground mount frame system", image: solar2 },
+  { id: 9, title: "Solar Structure", alt: "Solar structure - renewable energy support frame", image: solar3 },
+  { id: 10, title: "Material Handling Trolley", alt: "Material handling trolley - industrial pallet system", image: materialImg },
+  { id: 11, title: "Material Handling Trolley", alt: "Material handling equipment - custom industrial trolley", image: materialImg1 },
+  { id: 12, title: "Material Handling Trolley", alt: "Material handling - heavy duty transport trolley", image: materialImg2 },
+  { id: 13, title: "Material Handling Trolley", alt: "Material handling solution - warehouse trolley system", image: materialImg3 },
 ];
 
 const GalleryContent = () => {
@@ -63,7 +63,7 @@ const GalleryContent = () => {
             {galleryItems.map((item, index) => (
               <motion.div key={item.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.3 }} className="group cursor-pointer overflow-hidden rounded-lg bg-card border border-border" onClick={() => openLightbox(index)}>
                 <div className="aspect-[4/3] overflow-hidden relative">
-                  <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <Image src={item.image} alt={item.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
                 <div className="p-4">
                   <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
@@ -81,7 +81,7 @@ const GalleryContent = () => {
             <button onClick={(e) => { e.stopPropagation(); goPrev(); }} className="absolute left-4 text-white/70 hover:text-white transition-colors" aria-label="Previous image"><ChevronLeft size={36} /></button>
             <button onClick={(e) => { e.stopPropagation(); goNext(); }} className="absolute right-4 text-white/70 hover:text-white transition-colors" aria-label="Next image"><ChevronRight size={36} /></button>
             <motion.div key={lightboxIndex} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="max-w-4xl max-h-[80vh] mx-4 relative w-full h-[70vh]" onClick={(e) => e.stopPropagation()}>
-              <Image src={galleryItems[lightboxIndex].image} alt={galleryItems[lightboxIndex].title} fill className="object-contain rounded-lg" />
+              <Image src={galleryItems[lightboxIndex].image} alt={galleryItems[lightboxIndex].alt} fill className="object-contain rounded-lg" />
               <p className="absolute bottom-[-2rem] left-0 right-0 text-center text-white font-display text-lg">{galleryItems[lightboxIndex].title}</p>
             </motion.div>
           </motion.div>

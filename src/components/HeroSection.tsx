@@ -9,13 +9,21 @@ import fabricationImg from "@/assets/heavy_3.jpeg";
 import materialImg from "@/assets/material_1.jpeg";
 import skidImg from "@/assets/skid_2.jpeg";
 
-const slides = [heroBg, fabricationImg, materialImg, skidImg];
+const slides = [
+  { src: heroBg, alt: "Noble Engineering solar structure fabrication in Pune" },
+  { src: fabricationImg, alt: "Heavy fabrication assembly - crane beams and industrial components" },
+  { src: materialImg, alt: "Material handling equipment manufactured by Noble Engineering" },
+  { src: skidImg, alt: "Skid frame and structural fabrication work" },
+];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrent((prev) => (prev + 1) % slides.length), 5000);
+    const timer = setInterval(
+      () => setCurrent((prev) => (prev + 1) % slides.length),
+      5000
+    );
     return () => clearInterval(timer);
   }, []);
 
@@ -23,7 +31,7 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <AnimatePresence mode="popLayout">
         <motion.div key={current} initial={{ opacity: 0, scale: 1.1 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.2 }} className="absolute inset-0">
-          <Image src={slides[current]} alt="Noble Engineering" fill className="object-cover" priority />
+          <Image src={slides[current].src} alt={slides[current].alt} fill className="object-cover" priority />
         </motion.div>
       </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/80 via-surface-dark/60 to-surface-dark/90" />
