@@ -3,15 +3,16 @@ import logoImg from "@/assets/logo.jpeg";
 
 const Logo = ({ size = 40 }: { size?: number }) => (
   <div
-    className="rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0"
-    style={{ width: size, height: size }}
+    className="relative flex-shrink-0 rounded-md overflow-hidden"
+    style={{ height: size, width: size }}
   >
     <Image
       src={logoImg}
       alt="Noble Engineering logo"
-      height={size}
-      width={size}
-      className="object-cover w-full h-full"
+      fill
+      sizes={`${size}px`}
+      className="object-contain"
+      priority
     />
   </div>
 );
