@@ -18,8 +18,10 @@ import skidImg2 from "@/assets/skid_4.jpeg";
 import solar1 from "@/assets/solar_1.jpeg";
 import solar2 from "@/assets/solar_2.jpeg";
 import solar3 from "@/assets/solar_3.jpeg";
+import laserImg from "@/assets/fiber-laser-cutting.jpeg";
 
-const galleryItems: { id: number; title: string; alt: string; image: StaticImageData }[] = [
+const galleryItems: { id: number; title: string; alt: string; image: StaticImageData; badge?: string }[] = [
+  { id: 14, title: "3KW Fiber Laser Cutting Machine", alt: "3KW Fiber Laser Cutting Machine with bed 1.5 x 6.5 Mtr, Make - Synergy Machine, at Noble Engineering", image: laserImg, badge: "New" },
   { id: 1, title: "Heavy Fabrication", alt: "Heavy fabrication assembly - industrial crane beam component", image: fabricationImg },
   { id: 2, title: "Heavy Fabrication", alt: "Heavy fabrication - pressure tank and structural welding", image: fabricationImg1 },
   { id: 3, title: "Heavy Fabrication", alt: "Heavy fabrication - concrete bucket and construction cage", image: fabricationImg2 },
@@ -53,7 +55,7 @@ const GalleryContent = () => {
           <h1 className="font-display text-4xl md:text-5xl font-bold text-on-dark">
             Product <span className="text-primary">Gallery</span>
           </h1>
-          <p className="text-muted-on-dark mt-3 text-lg max-w-2xl">Browse our range of heavy fabrication assemblies, material handling equipment, and structural solutions.</p>
+          <p className="text-muted-on-dark mt-3 text-lg max-w-2xl">Browse our range of heavy fabrication assemblies, material handling equipment, structural solutions, and our new 3KW fiber laser cutting setup.</p>
         </div>
       </div>
 
@@ -64,6 +66,11 @@ const GalleryContent = () => {
               <motion.div key={item.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.3 }} className="group cursor-pointer overflow-hidden rounded-lg bg-card border border-border" onClick={() => openLightbox(index)}>
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <Image src={item.image} alt={item.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                  {item.badge && (
+                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-display uppercase tracking-widest shadow-md">
+                      {item.badge}
+                    </span>
+                  )}
                 </div>
                 <div className="p-4">
                   <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>

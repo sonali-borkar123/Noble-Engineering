@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
+  { label: "Laser Cutting", href: "#laser-cutting", badge: "New" },
   { label: "Facilities", href: "#facilities" },
   { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
@@ -34,24 +35,34 @@ const Navbar = () => {
             <span className="text-on-dark"> ENGINEERING</span>
           </span>
         </a>
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-7">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-sm font-medium text-on-dark/80 hover:text-primary transition-colors uppercase tracking-wide">
+            <a key={link.href} href={link.href} className="relative flex items-center gap-1.5 text-sm font-medium text-on-dark/80 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">
               {link.label}
+              {link.badge && (
+                <span className="px-1.5 py-0.5 rounded bg-primary text-primary-foreground text-[9px] font-display tracking-widest leading-none">
+                  {link.badge}
+                </span>
+              )}
             </a>
           ))}
         </div>
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-on-dark">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-on-dark" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen}>
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       <AnimatePresence>
         {menuOpen && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-steel border-t border-steel-light">
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="lg:hidden bg-steel border-t border-steel-light overflow-hidden">
             <div className="flex flex-col px-4 py-4 gap-4">
               {navLinks.map((link) => (
-                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="text-sm font-medium text-on-dark/80 hover:text-primary transition-colors uppercase tracking-wide">
+                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="flex items-center gap-2 text-sm font-medium text-on-dark/80 hover:text-primary transition-colors uppercase tracking-wide">
                   {link.label}
+                  {link.badge && (
+                    <span className="px-1.5 py-0.5 rounded bg-primary text-primary-foreground text-[9px] font-display tracking-widest leading-none">
+                      {link.badge}
+                    </span>
+                  )}
                 </a>
               ))}
             </div>

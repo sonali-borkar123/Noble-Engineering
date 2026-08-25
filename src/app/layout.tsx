@@ -10,13 +10,18 @@ export const metadata: Metadata = {
     template: "%s | Noble Engineering",
   },
   description:
-    "Noble Engineering is a leading heavy fabrication company in Pune, India. We manufacture heavy fabrication assemblies, material handling equipment, skid frames, solar structures, and more. ISO 9001:2015 certified.",
+    "Noble Engineering is a leading heavy fabrication company in Pune, India. We manufacture heavy fabrication assemblies, material handling equipment, skid frames, and solar structures, with in-house 3KW fiber laser cutting (1.5 × 6.5 Mtr bed). ISO 9001:2015 certified.",
   keywords: [
     "heavy fabrication",
     "engineering solutions",
     "material handling equipment",
     "skid frames",
     "solar structures",
+    "fiber laser cutting Pune",
+    "3KW fiber laser cutting machine",
+    "CNC laser cutting job work Pune",
+    "sheet metal laser cutting Chikhali",
+    "laser cutting 1.5x6.5 bed",
     "fabrication company Pune",
     "heavy fabrication India",
     "industrial fabrication",
@@ -150,6 +155,15 @@ const jsonLd = {
           name: "Solar Structures",
           description:
             "Solar panel mounting structures, frames, and support systems for renewable energy installations.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Fiber Laser Cutting",
+          description:
+            "In-house CNC cutting on a 3KW fiber laser cutting machine with a 1.5 x 6.5 Mtr bed, Make - Synergy Machine.",
         },
       },
     ],

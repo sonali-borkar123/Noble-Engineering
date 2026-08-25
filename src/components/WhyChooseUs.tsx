@@ -10,7 +10,7 @@ const reasons = [
   { icon: Clock, title: "On-Time Delivery", desc: "Reliable timelines backed by 50 tons monthly production capacity." },
   { icon: Wrench, title: "Custom Solutions", desc: "Tailored engineering for your specific industrial requirements." },
   { icon: HeartHandshake, title: "Trusted Partnerships", desc: "Long-term relationships with 18+ leading industrial clients." },
-  { icon: TrendingUp, title: "Continuous Improvement", desc: "Constantly upgrading processes, tools, and team capabilities." },
+  { icon: TrendingUp, title: "Continuous Improvement", desc: "Constantly upgrading our setup — including a new 3KW fiber laser cutting machine." },
 ];
 
 const WhyChooseUs = () => {

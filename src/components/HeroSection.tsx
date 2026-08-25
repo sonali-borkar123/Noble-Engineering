@@ -2,15 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import heroBg from "@/assets/solar_1.jpeg";
 import fabricationImg from "@/assets/heavy_3.jpeg";
 import materialImg from "@/assets/material_1.jpeg";
 import skidImg from "@/assets/skid_2.jpeg";
+import laserImg from "@/assets/fiber-laser-cutting.jpeg";
 
 const slides = [
   { src: heroBg, alt: "Noble Engineering solar structure fabrication in Pune" },
+  { src: laserImg, alt: "3KW Fiber Laser Cutting Machine with bed 1.5 x 6.5 Mtr, Make - Synergy Machine" },
   { src: fabricationImg, alt: "Heavy fabrication assembly - crane beams and industrial components" },
   { src: materialImg, alt: "Material handling equipment manufactured by Noble Engineering" },
   { src: skidImg, alt: "Skid frame and structural fabrication work" },
@@ -38,6 +40,14 @@ const HeroSection = () => {
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+          <a
+            href="#laser-cutting"
+            className="group inline-flex items-center gap-2.5 mb-6 pl-2 pr-4 py-1.5 rounded-full border border-primary/40 bg-surface-dark/60 backdrop-blur-sm hover:border-primary transition-colors"
+          >
+            <span className="px-2 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-display uppercase tracking-widest leading-none">New</span>
+            <span className="text-on-dark/90 text-xs sm:text-sm tracking-wide">3KW Fiber Laser Cutting Machine · Bed 1.5 × 6.5 Mtr</span>
+            <ArrowRight size={14} className="text-primary transition-transform group-hover:translate-x-1" />
+          </a>
           <p className="text-primary font-display text-lg tracking-[0.3em] uppercase mb-4">Made in India</p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-on-dark leading-tight mb-6">
             NOBLE<br /><span className="text-primary">ENGINEERING</span>
