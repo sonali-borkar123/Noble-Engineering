@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import MachinerySection from "@/components/MachinerySection";
 import ProductsSection from "@/components/ProductsSection";
 import LaserCuttingSection from "@/components/LaserCuttingSection";
 import FacilitiesSection from "@/components/FacilitiesSection";
@@ -20,6 +21,7 @@ export default function Home() {
       <StatsSection />
       <AboutSection />
       <WhyChooseUs />
+      <MachinerySection />
       <ProductsSection />
       <LaserCuttingSection />
       <FacilitiesSection />
