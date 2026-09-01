@@ -151,7 +151,7 @@ const MachinerySection = () => {
                               className="object-contain p-3 sm:p-4"
                             />
                           </div>
-                          <p className="bg-steel text-on-dark text-[9px] sm:text-[11px] font-medium px-2 py-1.5 leading-tight text-center truncate">
+                          <p className="bg-steel text-on-dark text-[9px] sm:text-[11px] font-medium px-2 py-1.5 leading-tight text-center line-clamp-2">
                             {item.name}
                           </p>
                         </div>
@@ -162,10 +162,10 @@ const MachinerySection = () => {
               </AnimatePresence>
 
               {/* title bar */}
-              <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-surface-dark/85 to-transparent p-4 sm:p-5 pointer-events-none">
-                <h3 className="font-display text-lg sm:text-xl font-bold text-on-dark">{slide.title}</h3>
+              <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-surface-dark/95 via-surface-dark/70 to-transparent px-14 sm:px-16 pt-4 sm:pt-5 pb-8 pointer-events-none z-20">
+                <h3 className="font-display text-base sm:text-xl font-bold text-primary leading-snug drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{slide.title}</h3>
                 {slide.subtitle && (
-                  <p className="text-muted-on-dark text-xs sm:text-sm mt-0.5">{slide.subtitle}</p>
+                  <p className="text-primary text-[11px] sm:text-sm mt-0.5 leading-snug drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{slide.subtitle}</p>
                 )}
               </div>
             </div>
@@ -186,7 +186,7 @@ const MachinerySection = () => {
               type="button"
               onClick={goPrev}
               aria-label="Previous machine"
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-surface-dark/60 text-on-dark hover:bg-primary transition-colors"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-surface-dark/70 text-on-dark shadow-md hover:bg-primary transition-colors"
             >
               <ChevronLeft size={20} />
             </button>
@@ -194,7 +194,7 @@ const MachinerySection = () => {
               type="button"
               onClick={goNext}
               aria-label="Next machine"
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-surface-dark/60 text-on-dark hover:bg-primary transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-surface-dark/70 text-on-dark shadow-md hover:bg-primary transition-colors"
             >
               <ChevronRight size={20} />
             </button>
