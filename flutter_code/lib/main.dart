@@ -32,19 +32,20 @@ class NobleEngineeringApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':
-            return _noTransition(const _HomeRoute());
+            return _noTransition(const _HomeRoute(), settings);
           case '/gallery':
-            return _noTransition(const GalleryPage());
+            return _noTransition(const GalleryPage(), settings);
           default:
-            return _noTransition(const NotFoundPage());
+            return _noTransition(const NotFoundPage(), settings);
         }
       },
     );
   }
 }
 
-Route<void> _noTransition(Widget child) {
+Route<void> _noTransition(Widget child, RouteSettings settings) {
   return PageRouteBuilder(
+    settings: settings, // keep the route name so the browser URL/history updates
     pageBuilder: (context, animation, secondaryAnimation) => child,
     transitionDuration: Duration.zero,
     reverseTransitionDuration: Duration.zero,
